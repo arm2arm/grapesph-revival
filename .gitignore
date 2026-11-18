@@ -1,0 +1,4 @@
+build/
+bin/
+results/*.csv
+.DS_Store

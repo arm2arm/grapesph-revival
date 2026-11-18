@@ -1,0 +1,14 @@
+# Replace the image with the pushed immutable GitLab Container Registry tag/digest.
+version: 0.9.0
+workflow:
+  type: serial
+  specification:
+    steps:
+      - name: emulate-grape3-cpu
+        environment: registry.gitlab.aip.de/REPLACE_GROUP/REPLACE_PROJECT/grapesph-grape3-cpu:0.1.0
+        commands:
+          - mkdir -p results
+          - /usr/local/bin/grape3_demo results/demo.csv
+outputs:
+  files:
+    - results/demo.csv
